@@ -1,0 +1,19 @@
+%h1 Listing boohs
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @boohs.each do |booh|
+    %tr
+      %td= booh.title
+      %td= link_to 'Show', booh
+      %td= link_to 'Edit', edit_booh_path(booh)
+      %td= link_to 'Destroy', booh, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Booh', new_booh_path
